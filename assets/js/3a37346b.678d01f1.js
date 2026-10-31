@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[212],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/soggybird0/Strata/blob/master","baseUrl":"/Strata/","classOrder":[{"section":"Public API","classes":["Strata"]},{"section":"Internals","classes":["StrataServer","StrataClient","State"],"gitSourceBranch":"main"}],"apiCategories":[]}')}}]);

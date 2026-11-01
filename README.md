@@ -1,5 +1,5 @@
 # Strata
-> - "**Data without the overhead.**"
+> - "**Data without the overhead.**" -- soggybird0
 
 ## Docs:
 

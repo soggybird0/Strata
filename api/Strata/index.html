@@ -21,7 +21,7 @@ local Template = {
 	Inventory = {} :: { string },
 }
 
-return Strata:Init({
+return Strata.Init({
 	StoreName = &quot;Players&quot;,
 	Template = Template,
 	Leaderstats = { Coins = true },
@@ -70,7 +70,7 @@ local Template = {
 	Inventory = {} :: { string },
 }
 
-return Strata:Init({
+return Strata.Init({
 	StoreName = &quot;Players&quot;,
 	Template = Template,
 	Leaderstats = { Coins = true },
@@ -102,8 +102,8 @@ end
 Autocomplete needs `Workspace.UseNewLuauTypeSolver = Enabled`. Your code
 runs the same without it, you only lose the types.
 :::"><link data-rh="true" rel="canonical" href="https://soggybird0.github.io/Strata/api/Strata"><link data-rh="true" rel="alternate" href="https://soggybird0.github.io/Strata/api/Strata" hreflang="en"><link data-rh="true" rel="alternate" href="https://soggybird0.github.io/Strata/api/Strata" hreflang="x-default"><link rel="stylesheet" href="/Strata/assets/css/styles.5ec48d9a.css">
-<script src="/Strata/assets/js/runtime~main.76df6b6d.js" defer="defer"></script>
-<script src="/Strata/assets/js/main.8ad211ce.js" defer="defer"></script>
+<script src="/Strata/assets/js/runtime~main.7af4c640.js" defer="defer"></script>
+<script src="/Strata/assets/js/main.4a51cb7d.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -127,7 +127,7 @@ runs the same without it, you only lose the types.
 	Inventory <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">::</span> <span class="token punctuation">{</span> string <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">return</span> Strata<span class="token punctuation">:</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span> Strata<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
 	StoreName <span class="token operator">=</span> <span class="token string">"Players"</span><span class="token punctuation">,</span>
 	Template <span class="token operator">=</span> Template<span class="token punctuation">,</span>
 	Leaderstats <span class="token operator">=</span> <span class="token punctuation">{</span> Coins <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -266,19 +266,36 @@ runs the same without it, you only lose the types.
 <p>Whether ProfileStore's in-memory mock is used.</p>
 </span></span></div></div><code>}</code></div><div>
 <p>Every setting with its default applied. Returned by <code>GetSettings</code>.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Signal"><code style="text-decoration:none">Signal</code><a href="#Signal" class="hash-link" aria-label="Direct link to Signal" title="Direct link to Signal" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L363"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Signal<!-- --> <!-- -->{</code><code>}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Signal"><code style="text-decoration:none">Signal</code><a href="#Signal" class="hash-link" aria-label="Direct link to Signal" title="Direct link to Signal" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L364"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Signal<!-- --> <!-- -->{</code><code>}</code></div><div>
 <p>Generic Wire-backed signal. Parameterized by the values passed to listeners.</p>
 <pre class="language-lua"><code class="language-lua"><span class="token comment">-- Signal&#x3C;string, Player?, T></span>
 Server<span class="token punctuation">.</span>OnSessionStart<span class="token punctuation">:</span><span class="token function">Connect</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>Key<span class="token punctuation">,</span> Player<span class="token punctuation">,</span> Data<span class="token punctuation">)</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SharedStrata"><code style="text-decoration:none">SharedStrata</code><a href="#SharedStrata" class="hash-link" aria-label="Direct link to SharedStrata" title="Direct link to SharedStrata" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L405"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>SharedStrata<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>Server<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/StrataServer">StrataServer</a></code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SessionOptions"><code style="text-decoration:none">SessionOptions</code><a href="#SessionOptions" class="hash-link" aria-label="Direct link to SessionOptions" title="Direct link to SessionOptions" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L394"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>SessionOptions<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>Incognito<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>If true, the session never saves (manual, auto, or on end).</p>
+</span></span></div><div><code>Key<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Fully override the save key for this load.</p>
+</span></span></div><div><code>KeyPrefix<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Override the store KeyPrefix for this load only (applied before UserId / PlayerKey).</p>
+</span></span></div></div><code>}</code></div><div>
+<p>Per-load options for <a href="/Strata/api/StrataServer#LoadVault">StrataServer.LoadVault</a> / <a href="/Strata/api/StrataServer#GetVault">StrataServer.GetVault</a>.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- Never saves</span>
+Data<span class="token punctuation">.</span>Server<span class="token punctuation">:</span><span class="token function">LoadVault</span><span class="token punctuation">(</span>Player<span class="token punctuation">,</span> <span class="token punctuation">{</span> Incognito <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">-- Saves under a fixed key</span>
+Data<span class="token punctuation">.</span>Server<span class="token punctuation">:</span><span class="token function">LoadVault</span><span class="token punctuation">(</span>Player<span class="token punctuation">,</span> <span class="token punctuation">{</span> Key <span class="token operator">=</span> <span class="token string">"QA_Profile_01"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">-- Load a specific key, but never write back</span>
+Data<span class="token punctuation">.</span>Server<span class="token punctuation">:</span><span class="token function">LoadVault</span><span class="token punctuation">(</span>Player<span class="token punctuation">,</span> <span class="token punctuation">{</span> Incognito <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span> Key <span class="token operator">=</span> <span class="token string">"Template_Starter"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SharedStrata"><code style="text-decoration:none">SharedStrata</code><a href="#SharedStrata" class="hash-link" aria-label="Direct link to SharedStrata" title="Direct link to SharedStrata" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L449"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>SharedStrata<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>Server<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/StrataServer">StrataServer</a></code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
 <p>The server side. Only populated on the server.</p>
 </span></span></div><div><code>Client<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/StrataClient">StrataClient</a></code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
 <p>The client side. Only populated on the client.</p>
 </span></span></div></div><code>}</code></div><div>
-<p>What <a href="/Strata/api/Strata#Init">Strata:Init</a> returns.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Config"><code style="text-decoration:none">Config</code><a href="#Config" class="hash-link" aria-label="Direct link to Config" title="Direct link to Config" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L437"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Config<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>StoreName<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>What <a href="/Strata/api/Strata#Init">Strata.Init</a> returns.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Config"><code style="text-decoration:none">Config</code><a href="#Config" class="hash-link" aria-label="Direct link to Config" title="Direct link to Config" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L483"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Config<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>StoreName<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
 <p>The DataStore name. Required.</p>
 </span></span></div><div><code>Template<!-- -->: </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>The shape and default values of a player's data. Required.</p>
@@ -296,14 +313,14 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
 <p>Use ProfileStore's in-memory storage. Nothing is saved. Defaults to <code>false</code>.</p>
 </span></span></div><div><code>KickOnFail<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Kick players whose data fails to load. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>KickOnSessionEnd<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Kick players when their session ends while they are in the server. Defaults to <code>true</code>.</p>
 </span></span></div><div><code>KickMessage<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
 <p>The message shown when a player is kicked.</p>
 </span></span></div><div><code>LoadTimeout<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Seconds <code>LoadVault</code> waits before returning <code>nil</code>. Defaults to <code>30</code>.</p>
 </span></span></div><div><code>SchemaVersion<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
-<p>The current schema version. Pair with <code>Migrate</code>.</p>
-</span></span></div><div><code>Migrate<!-- -->: </code><code class="purple_ieR2">(</code><code class="green_DgR4">(</code><div class="inset_uKQm"><code>Data<!-- -->: </code><code class="blue_P4bS">T</code><code class="green_DgR4">,</code></div><div class="inset_uKQm"><code>FromVersion<!-- -->: </code><code class="blue_P4bS">number</code><code class="green_DgR4">,</code></div><div class="inset_uKQm"><code>ToVersion<!-- -->: </code><code class="blue_P4bS">number</code></div><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="green_DgR4">(</code><code class="green_DgR4">)</code><code class="purple_ieR2">)</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
-<p>Runs once per profile whose saved version is older than <code>SchemaVersion</code>.</p>
+<p>The current schema version. Pair with <a href="/Strata/api/StrataServer#BindToMigrate">StrataServer.BindToMigrate</a>.</p>
 </span></span></div><div><code>AutoSaveSeconds<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Extra save interval on top of ProfileStore's own auto-saving.</p>
 </span></span></div><div><code>ReplicateMode<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#ReplicateMode">ReplicateMode?</a></code><span class="inlineDescription_G7Er">-- <span>
@@ -319,22 +336,42 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
 </span></span></div><div><code>ClientGuard<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#ClientGuard">ClientGuard?</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Whether client tables are read-only. Defaults to <code>"Proxy"</code>.</p>
 </span></span></div></div><code>}</code></div><div>
-<p>The options passed to <a href="/Strata/api/Strata#Init">Strata:Init</a>. Only <code>StoreName</code> and <code>Template</code> are required.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="PrivateFields&lt;T&gt;"><code style="text-decoration:none">PrivateFields&lt;T&gt;</code><a href="#PrivateFields&lt;T&gt;" class="hash-link" aria-label="Direct link to PrivateFields&lt;T&gt;" title="Direct link to PrivateFields&lt;T&gt;" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L473"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>PrivateFields&lt;T&gt;<!-- --> = </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">boolean</code><code class="op_lSLc"> | </code><code class="blue_P4bS">PrivateFields</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><code class="purple_ieR2">}</code></div><div>
+<p>The options passed to <a href="/Strata/api/Strata#Init">Strata.Init</a>. Only <code>StoreName</code> and <code>Template</code> are required.</p>
+<p>Mutation and session hooks are signals on <a href="/Strata/api/StrataServer">StrataServer</a>, not options.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="DebugConfig"><code style="text-decoration:none">DebugConfig</code><a href="#DebugConfig" class="hash-link" aria-label="Direct link to DebugConfig" title="Direct link to DebugConfig" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L497"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>DebugConfig<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>dev<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Studio" target="_blank" rel="noopener noreferrer">Studio<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc">-</code><code class="blue_P4bS">oriented</code><code class="blue_P4bS">helpers.</code><code class="blue_P4bS">All</code><code class="blue_P4bS">fields</code><code class="blue_P4bS">are</code><code class="blue_P4bS">optional</code><code class="blue_P4bS">and</code><code class="blue_P4bS">default</code><code class="blue_P4bS">off.</code></div><div><code>Enabled<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Master switch. When true, enables safer defaults for logging helpers.</p>
+</span></span></div><div><code>Incognito<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Studio-only: every player load uses a unique throwaway key (does not save when paired with LoadVault Incognito; otherwise still writes under the throwaway key). Prefer per-load <code>{ Incognito = true }</code>.</p>
+</span></span></div><div><code>IncognitoPrefix<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Prefix for debug / per-load incognito keys. Default <code>"incog_"</code>.</p>
+</span></span></div><div><code>LogWrites<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Print every Set / Update / Mutate / array write with path and value.</p>
+</span></span></div><div><code>LogReplication<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Print when full snapshots or patches are sent to clients.</p>
+</span></span></div><div><code>LogObservers<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Print when a node's Observe/Changed signal fires.</p>
+</span></span></div><div><code>ForceIncognito<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Allow Debug.Incognito outside Studio (use with care).</p>
+</span></span></div></div><code>}</code></div><div></div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="MigrateFn&lt;T&gt;"><code style="text-decoration:none">MigrateFn&lt;T&gt;</code><a href="#MigrateFn&lt;T&gt;" class="hash-link" aria-label="Direct link to MigrateFn&lt;T&gt;" title="Direct link to MigrateFn&lt;T&gt;" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L514"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>MigrateFn&lt;T&gt;<!-- --> = </code> <code class="purple_ieR2">(</code><div class="inset_uKQm"><code>data<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>fromVersion<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>toVersion<!-- -->: </code><code class="blue_P4bS">number</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code></div><div>
+<p>
+  Migration callback registered with <a href="/Strata/api/StrataServer#BindToMigrate">StrataServer.BindToMigrate</a>.
+  <code>data</code> is your template type <code>T</code>.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="PrivateFields&lt;T&gt;"><code style="text-decoration:none">PrivateFields&lt;T&gt;</code><a href="#PrivateFields&lt;T&gt;" class="hash-link" aria-label="Direct link to PrivateFields&lt;T&gt;" title="Direct link to PrivateFields&lt;T&gt;" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L570"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>PrivateFields&lt;T&gt;<!-- --> = </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">boolean</code><code class="op_lSLc"> | </code><code class="blue_P4bS">PrivateFields</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><code class="purple_ieR2">}</code></div><div>
 <p>
   Fields that are never sent to the client. Mirrors your template at any
   depth: <code>Secret = true</code> hides a root field, <code>Stats = { AntiCheat = true }</code>
   hides one field inside a table, and <code>Stats = true</code> hides the whole table.
   Missing keys default to <code>false</code>.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="TransientFields&lt;T&gt;"><code style="text-decoration:none">TransientFields&lt;T&gt;</code><a href="#TransientFields&lt;T&gt;" class="hash-link" aria-label="Direct link to TransientFields&lt;T&gt;" title="Direct link to TransientFields&lt;T&gt;" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L481"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>TransientFields&lt;T&gt;<!-- --> = </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">boolean</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="TransientFields&lt;T&gt;"><code style="text-decoration:none">TransientFields&lt;T&gt;</code><a href="#TransientFields&lt;T&gt;" class="hash-link" aria-label="Direct link to TransientFields&lt;T&gt;" title="Direct link to TransientFields&lt;T&gt;" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/Types.luau#L578"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>TransientFields&lt;T&gt;<!-- --> = </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">boolean</code><code class="purple_ieR2">}</code></div><div>
 <p>
   Root fields that live in memory only and are never saved. Each session
   starts them from the template. Missing keys default to <code>false</code>.
 </p>
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Version"><code style="text-decoration:none">Version</code><a href="#Version" class="hash-link" aria-label="Direct link to Version" title="Direct link to Version" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/init.luau#L92"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Strata<!-- -->.<!-- -->Version<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Version"><code style="text-decoration:none">Version</code><a href="#Version" class="hash-link" aria-label="Direct link to Version" title="Direct link to Version" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/init.luau#L93"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Strata<!-- -->.<!-- -->Version<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
 <p>The version of Strata.</p>
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Init"><code style="text-decoration:none">Init</code><a href="#Init" class="hash-link" aria-label="Direct link to Init" title="Direct link to Init" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/init.luau#L113"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Strata<!-- -->.</code><code class="green_DgR4">Init</code><code>(</code><div class="inset_uKQm"><div><code>Options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#Config">Config</a></code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Init"><code style="text-decoration:none">Init</code><a href="#Init" class="hash-link" aria-label="Direct link to Init" title="Direct link to Init" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/init.luau#L114"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Strata<!-- -->.</code><code class="green_DgR4">Init</code><code>(</code><div class="inset_uKQm"><div><code>Options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#Config">Config</a></code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
 <p>Your template and settings. Only <code>StoreName</code> and <code>Template</code> are required.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#SharedStrata">SharedStrata</a></code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
 <p>The server and client sides of your store.</p>
@@ -344,7 +381,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
   <code>Server</code> is only populated on the server and <code>Client</code> only on the client.
   Each side uses its own field, so neither needs nil checks.
 </p>
-<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Data <span class="token operator">=</span> Strata<span class="token punctuation">:</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Data <span class="token operator">=</span> Strata<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
 	StoreName <span class="token operator">=</span> <span class="token string">"Players"</span><span class="token punctuation">,</span>
 	Template <span class="token operator">=</span> <span class="token punctuation">{</span> Coins <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -355,7 +392,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
     &quot;functions&quot;: [
         {
             &quot;name&quot;: &quot;Init&quot;,
-            &quot;desc&quot;: &quot;Opens Strata for the current environment.\n\n`Server` is only populated on the server and `Client` only on the client.\nEach side uses its own field, so neither needs nil checks.\n\n```lua\nlocal Data = Strata:Init({\n\tStoreName = \&quot;Players\&quot;,\n\tTemplate = { Coins = 0 },\n})\n\nlocal S = Data.Server:LoadVault(Player)\n```&quot;,
+            &quot;desc&quot;: &quot;Opens Strata for the current environment.\n\n`Server` is only populated on the server and `Client` only on the client.\nEach side uses its own field, so neither needs nil checks.\n\n```lua\nlocal Data = Strata.Init({\n\tStoreName = \&quot;Players\&quot;,\n\tTemplate = { Coins = 0 },\n})\n\nlocal S = Data.Server:LoadVault(Player)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;Options&quot;,
@@ -371,7 +408,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 113,
+                &quot;line&quot;: 114,
                 &quot;path&quot;: &quot;src/init.luau&quot;
             }
         }
@@ -383,7 +420,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             &quot;lua_type&quot;: &quot;string&quot;,
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 92,
+                &quot;line&quot;: 93,
                 &quot;path&quot;: &quot;src/init.luau&quot;
             }
         }
@@ -634,13 +671,38 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             &quot;name&quot;: &quot;Signal&quot;,
             &quot;desc&quot;: &quot;Generic Wire-backed signal. Parameterized by the values passed to listeners.\n\n```lua\n-- Signal&lt;string, Player?, T&gt;\nServer.OnSessionStart:Connect(function(Key, Player, Data)\nend)\n```&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 363,
+                &quot;line&quot;: 364,
+                &quot;path&quot;: &quot;src/Types.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SessionOptions&quot;,
+            &quot;desc&quot;: &quot;Per-load options for [StrataServer.LoadVault] / [StrataServer.GetVault].\n\n\n```lua\n-- Never saves\nData.Server:LoadVault(Player, { Incognito = true })\n\n-- Saves under a fixed key\nData.Server:LoadVault(Player, { Key = \&quot;QA_Profile_01\&quot; })\n\n-- Load a specific key, but never write back\nData.Server:LoadVault(Player, { Incognito = true, Key = \&quot;Template_Starter\&quot; })\n```&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;Incognito&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;If true, the session never saves (manual, auto, or on end).&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Key&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;,
+                    &quot;desc&quot;: &quot;Fully override the save key for this load.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;KeyPrefix&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;,
+                    &quot;desc&quot;: &quot;Override the store KeyPrefix for this load only (applied before UserId / PlayerKey).&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 394,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         },
         {
             &quot;name&quot;: &quot;SharedStrata&quot;,
-            &quot;desc&quot;: &quot;What [Strata:Init] returns.&quot;,
+            &quot;desc&quot;: &quot;What [Strata.Init] returns.&quot;,
             &quot;fields&quot;: [
                 {
                     &quot;name&quot;: &quot;Server&quot;,
@@ -654,13 +716,13 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
                 }
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 405,
+                &quot;line&quot;: 449,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         },
         {
             &quot;name&quot;: &quot;Config&quot;,
-            &quot;desc&quot;: &quot;The options passed to [Strata:Init]. Only `StoreName` and `Template` are required.&quot;,
+            &quot;desc&quot;: &quot;The options passed to [Strata.Init]. Only `StoreName` and `Template` are required.\n\nMutation and session hooks are signals on [StrataServer], not options.&quot;,
             &quot;fields&quot;: [
                 {
                     &quot;name&quot;: &quot;StoreName&quot;,
@@ -708,6 +770,11 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
                     &quot;desc&quot;: &quot;Kick players whose data fails to load. Defaults to `true`.&quot;
                 },
                 {
+                    &quot;name&quot;: &quot;KickOnSessionEnd&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Kick players when their session ends while they are in the server. Defaults to `true`.&quot;
+                },
+                {
                     &quot;name&quot;: &quot;KickMessage&quot;,
                     &quot;lua_type&quot;: &quot;string?&quot;,
                     &quot;desc&quot;: &quot;The message shown when a player is kicked.&quot;
@@ -720,12 +787,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
                 {
                     &quot;name&quot;: &quot;SchemaVersion&quot;,
                     &quot;lua_type&quot;: &quot;number?&quot;,
-                    &quot;desc&quot;: &quot;The current schema version. Pair with `Migrate`.&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;Migrate&quot;,
-                    &quot;lua_type&quot;: &quot;((Data: T, FromVersion: number, ToVersion: number) -&gt; ())?&quot;,
-                    &quot;desc&quot;: &quot;Runs once per profile whose saved version is older than `SchemaVersion`.&quot;
+                    &quot;desc&quot;: &quot;The current schema version. Pair with [StrataServer.BindToMigrate].&quot;
                 },
                 {
                     &quot;name&quot;: &quot;AutoSaveSeconds&quot;,
@@ -764,7 +826,66 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
                 }
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 437,
+                &quot;line&quot;: 483,
+                &quot;path&quot;: &quot;src/Types.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;DebugConfig&quot;,
+            &quot;desc&quot;: &quot;&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;dev&quot;,
+                    &quot;lua_type&quot;: &quot;Studio-oriented helpers. All fields are optional and default off.&quot;,
+                    &quot;desc&quot;: &quot;&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Enabled&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Master switch. When true, enables safer defaults for logging helpers.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Incognito&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Studio-only: every player load uses a unique throwaway key (does not save when paired with LoadVault Incognito; otherwise still writes under the throwaway key). Prefer per-load `{ Incognito = true }`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;IncognitoPrefix&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;,
+                    &quot;desc&quot;: &quot;Prefix for debug / per-load incognito keys. Default `\&quot;incog_\&quot;`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;LogWrites&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Print every Set / Update / Mutate / array write with path and value.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;LogReplication&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Print when full snapshots or patches are sent to clients.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;LogObservers&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Print when a node&#x27;s Observe/Changed signal fires.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ForceIncognito&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Allow Debug.Incognito outside Studio (use with care).&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 497,
+                &quot;path&quot;: &quot;src/Types.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;MigrateFn&lt;T&gt;&quot;,
+            &quot;desc&quot;: &quot;Migration callback registered with [StrataServer.BindToMigrate].\n`data` is your template type `T`.&quot;,
+            &quot;lua_type&quot;: &quot;(data: T, fromVersion: number, toVersion: number) -&gt; ()&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 514,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         },
@@ -773,7 +894,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             &quot;desc&quot;: &quot;Fields that are never sent to the client. Mirrors your template at any\ndepth: `Secret = true` hides a root field, `Stats = { AntiCheat = true }`\nhides one field inside a table, and `Stats = true` hides the whole table.\nMissing keys default to `false`.&quot;,
             &quot;lua_type&quot;: &quot;{ [string]: boolean | PrivateFields&lt;T&gt; }&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 473,
+                &quot;line&quot;: 570,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         },
@@ -782,7 +903,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             &quot;desc&quot;: &quot;Root fields that live in memory only and are never saved. Each session\nstarts them from the template. Missing keys default to `false`.&quot;,
             &quot;lua_type&quot;: &quot;{ [string]: boolean }&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 481,
+                &quot;line&quot;: 578,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         },
@@ -791,7 +912,7 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             &quot;desc&quot;: &quot;The ProfileStore session object. Internal.&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 490,
+                &quot;line&quot;: 587,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         },
@@ -800,13 +921,13 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
             &quot;desc&quot;: &quot;One change sent to the client. Internal.&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 510,
+                &quot;line&quot;: 607,
                 &quot;path&quot;: &quot;src/Types.luau&quot;
             }
         }
     ],
     &quot;name&quot;: &quot;Strata&quot;,
-    &quot;desc&quot;: &quot;Data, without the overhead.\n\nStrata isn&#x27;t the data system with the most features. It&#x27;s the one that asks\nthe least of you to get a great one. Describe your data once and Strata\nloads it, saves it, replicates it to the client and types it for you.\nBuilt on [ProfileStore](https://madstudioroblox.github.io/ProfileStore/).\n\n```lua\n-- ReplicatedStorage/Data\nlocal ReplicatedStorage = game:GetService(\&quot;ReplicatedStorage\&quot;)\nlocal Strata = require(ReplicatedStorage.Strata)\n\nlocal Template = {\n\tCoins = 0,\n\tStats = { Level = 1 },\n\tInventory = {} :: { string },\n}\n\nreturn Strata:Init({\n\tStoreName = \&quot;Players\&quot;,\n\tTemplate = Template,\n\tLeaderstats = { Coins = true },\n})\n```\n\n```lua\n-- server\nlocal Data = require(game.ReplicatedStorage.Data).Server\nlocal S = Data:LoadVault(Player)\nif S then\n\tS.Coins.Update(function(Coins)\n\t\treturn Coins + 25\n\tend)\n\tS.Inventory.AddNext(\&quot;Wooden Sword\&quot;)\nend\n\n-- client\nlocal Data = require(game.ReplicatedStorage.Data).Client\nlocal C = Data:LoadVault()\nif C then\n\tC.Coins.Observe(function(Coins)\n\t\tprint(Coins)\n\tend)\nend\n```\n\n:::danger Type solver required\nAutocomplete needs `Workspace.UseNewLuauTypeSolver = Enabled`. Your code\nruns the same without it, you only lose the types.\n:::&quot;,
+    &quot;desc&quot;: &quot;Data, without the overhead.\n\nStrata isn&#x27;t the data system with the most features. It&#x27;s the one that asks\nthe least of you to get a great one. Describe your data once and Strata\nloads it, saves it, replicates it to the client and types it for you.\nBuilt on [ProfileStore](https://madstudioroblox.github.io/ProfileStore/).\n\n```lua\n-- ReplicatedStorage/Data\nlocal ReplicatedStorage = game:GetService(\&quot;ReplicatedStorage\&quot;)\nlocal Strata = require(ReplicatedStorage.Strata)\n\nlocal Template = {\n\tCoins = 0,\n\tStats = { Level = 1 },\n\tInventory = {} :: { string },\n}\n\nreturn Strata.Init({\n\tStoreName = \&quot;Players\&quot;,\n\tTemplate = Template,\n\tLeaderstats = { Coins = true },\n})\n```\n\n```lua\n-- server\nlocal Data = require(game.ReplicatedStorage.Data).Server\nlocal S = Data:LoadVault(Player)\nif S then\n\tS.Coins.Update(function(Coins)\n\t\treturn Coins + 25\n\tend)\n\tS.Inventory.AddNext(\&quot;Wooden Sword\&quot;)\nend\n\n-- client\nlocal Data = require(game.ReplicatedStorage.Data).Client\nlocal C = Data:LoadVault()\nif C then\n\tC.Coins.Observe(function(Coins)\n\t\tprint(Coins)\n\tend)\nend\n```\n\n:::danger Type solver required\nAutocomplete needs `Workspace.UseNewLuauTypeSolver = Enabled`. Your code\nruns the same without it, you only lose the types.\n:::&quot;,
     &quot;realm&quot;: [
         &quot;Client&quot;,
         &quot;Server&quot;
@@ -815,6 +936,6 @@ Server<span class="token punctuation">.</span>OnSessionStart<span class="token p
         &quot;line&quot;: 61,
         &quot;path&quot;: &quot;src/init.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#CachedSettings" class="table-of-contents__link toc-highlight">CachedSettings</a></li><li><a href="#ClientGuard" class="table-of-contents__link toc-highlight">ClientGuard</a></li><li><a href="#Config" class="table-of-contents__link toc-highlight">Config</a></li><li><a href="#Connection" class="table-of-contents__link toc-highlight">Connection</a></li><li><a href="#MutateContext" class="table-of-contents__link toc-highlight">MutateContext</a></li><li><a href="#Path" class="table-of-contents__link toc-highlight">Path</a></li><li><a href="#PrivateFields&lt;T&gt;" class="table-of-contents__link toc-highlight">PrivateFields<t></t></a></li><li><a href="#ReplicateMode" class="table-of-contents__link toc-highlight">ReplicateMode</a></li><li><a href="#SessionInfo" class="table-of-contents__link toc-highlight">SessionInfo</a></li><li><a href="#SharedStrata" class="table-of-contents__link toc-highlight">SharedStrata</a></li><li><a href="#Signal" class="table-of-contents__link toc-highlight">Signal</a></li><li><a href="#Signal" class="table-of-contents__link toc-highlight">Signal</a></li><li><a href="#TransientFields&lt;T&gt;" class="table-of-contents__link toc-highlight">TransientFields<t></t></a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Version" class="table-of-contents__link toc-highlight">Version</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Init" class="table-of-contents__link toc-highlight">.Init</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 soggybird0. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#CachedSettings" class="table-of-contents__link toc-highlight">CachedSettings</a></li><li><a href="#ClientGuard" class="table-of-contents__link toc-highlight">ClientGuard</a></li><li><a href="#Config" class="table-of-contents__link toc-highlight">Config</a></li><li><a href="#Connection" class="table-of-contents__link toc-highlight">Connection</a></li><li><a href="#DebugConfig" class="table-of-contents__link toc-highlight">DebugConfig</a></li><li><a href="#MigrateFn&lt;T&gt;" class="table-of-contents__link toc-highlight">MigrateFn<t></t></a></li><li><a href="#MutateContext" class="table-of-contents__link toc-highlight">MutateContext</a></li><li><a href="#Path" class="table-of-contents__link toc-highlight">Path</a></li><li><a href="#PrivateFields&lt;T&gt;" class="table-of-contents__link toc-highlight">PrivateFields<t></t></a></li><li><a href="#ReplicateMode" class="table-of-contents__link toc-highlight">ReplicateMode</a></li><li><a href="#SessionInfo" class="table-of-contents__link toc-highlight">SessionInfo</a></li><li><a href="#SessionOptions" class="table-of-contents__link toc-highlight">SessionOptions</a></li><li><a href="#SharedStrata" class="table-of-contents__link toc-highlight">SharedStrata</a></li><li><a href="#Signal" class="table-of-contents__link toc-highlight">Signal</a></li><li><a href="#Signal" class="table-of-contents__link toc-highlight">Signal</a></li><li><a href="#TransientFields&lt;T&gt;" class="table-of-contents__link toc-highlight">TransientFields<t></t></a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Version" class="table-of-contents__link toc-highlight">Version</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Init" class="table-of-contents__link toc-highlight">.Init</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 soggybird0. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

@@ -34,7 +34,8 @@ end
 
 **All nodes:** `Get`, `Set`, `Update`, `Observe`, `Changed`
 **Tables:** `Mutate`, `Snapshot`
-**Maps and arrays:** `Has`, `Keys`, `Values`, `Size`, `Clear`, `Insert`, `Remove`
+**Maps and arrays:** `Has`, `Keys`, `Values`, `Size`, `Clear`
+**Maps:** `Insert`, `Remove`
 **Arrays:** `AddNext`, `RemoveLast`, `InsertAt`, `RemoveAt`
 **Root only:** `IsLoaded`, `Save`, `End`, `Replicate`, `GetSessionInfo`, `GetMeta`, `SetMeta`
 
@@ -74,7 +75,8 @@ end
 
 **All nodes:** `Get`, `Set`, `Update`, `Observe`, `Changed`
 **Tables:** `Mutate`, `Snapshot`
-**Maps and arrays:** `Has`, `Keys`, `Values`, `Size`, `Clear`, `Insert`, `Remove`
+**Maps and arrays:** `Has`, `Keys`, `Values`, `Size`, `Clear`
+**Maps:** `Insert`, `Remove`
 **Arrays:** `AddNext`, `RemoveLast`, `InsertAt`, `RemoveAt`
 **Root only:** `IsLoaded`, `Save`, `End`, `Replicate`, `GetSessionInfo`, `GetMeta`, `SetMeta`
 
@@ -84,8 +86,8 @@ replication do the rest.
 :::danger Type solver required
 Autocomplete needs the new Luau type solver. Runtime works without it.
 :::"><link data-rh="true" rel="canonical" href="https://soggybird0.github.io/Strata/api/State"><link data-rh="true" rel="alternate" href="https://soggybird0.github.io/Strata/api/State" hreflang="en"><link data-rh="true" rel="alternate" href="https://soggybird0.github.io/Strata/api/State" hreflang="x-default"><link rel="stylesheet" href="/Strata/assets/css/styles.5ec48d9a.css">
-<script src="/Strata/assets/js/runtime~main.76df6b6d.js" defer="defer"></script>
-<script src="/Strata/assets/js/main.8ad211ce.js" defer="defer"></script>
+<script src="/Strata/assets/js/runtime~main.7af4c640.js" defer="defer"></script>
+<script src="/Strata/assets/js/main.4a51cb7d.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -123,7 +125,8 @@ syntax</strong>: nodes hand out pre-bound functions, so <code>S.Coins.Get()</cod
 <p>
   <strong>All nodes:</strong> <code>Get</code>, <code>Set</code>, <code>Update</code>, <code>Observe</code>, <code>Changed</code>
   <strong>Tables:</strong> <code>Mutate</code>, <code>Snapshot</code>
-  <strong>Maps and arrays:</strong> <code>Has</code>, <code>Keys</code>, <code>Values</code>, <code>Size</code>, <code>Clear</code>, <code>Insert</code>, <code>Remove</code>
+  <strong>Maps and arrays:</strong> <code>Has</code>, <code>Keys</code>, <code>Values</code>, <code>Size</code>, <code>Clear</code>
+  <strong>Maps:</strong> <code>Insert</code>, <code>Remove</code>
   <strong>Arrays:</strong> <code>AddNext</code>, <code>RemoveLast</code>, <code>InsertAt</code>, <code>RemoveAt</code>
   <strong>Root only:</strong> <code>IsLoaded</code>, <code>Save</code>, <code>End</code>, <code>Replicate</code>, <code>GetSessionInfo</code>, <code>GetMeta</code>, <code>SetMeta</code>
 </p>
@@ -148,7 +151,7 @@ syntax</strong>: nodes hand out pre-bound functions, so <code>S.Coins.Get()</cod
     
   
 
-</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Changed"><code style="text-decoration:none">Changed</code><a href="#Changed" class="hash-link" aria-label="Direct link to Changed" title="Direct link to Changed" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L188"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.<!-- -->Changed<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#Signal">Signal</a></code></div><div>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Changed"><code style="text-decoration:none">Changed</code><a href="#Changed" class="hash-link" aria-label="Direct link to Changed" title="Direct link to Changed" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L191"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.<!-- -->Changed<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#Signal">Signal</a></code></div><div>
 <p>
   A signal that fires when this node's value changes. Unlike <a href="/Strata/api/State#Observe">State.Observe</a>
   it does not fire for the current value on connect.
@@ -161,7 +164,7 @@ syntax</strong>: nodes hand out pre-bound functions, so <code>S.Coins.Get()</cod
 S<span class="token punctuation">.</span>Coins<span class="token punctuation">.</span>Changed<span class="token punctuation">:</span><span class="token function">Once</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>New<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 <span class="token keyword">local</span> New<span class="token punctuation">,</span> Old <span class="token operator">=</span> S<span class="token punctuation">.</span>Coins<span class="token punctuation">.</span>Changed<span class="token punctuation">:</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Get"><code style="text-decoration:none">Get</code><a href="#Get" class="hash-link" aria-label="Direct link to Get" title="Direct link to Get" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L240"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Get</code><code>(</code><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Get"><code style="text-decoration:none">Get</code><a href="#Get" class="hash-link" aria-label="Direct link to Get" title="Direct link to Get" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L245"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Get</code><code>(</code><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>The value at this node, or <code>nil</code> if there is none.</p>
 </span></span></div><div>
 <p>Returns the current value at this node.</p>
@@ -169,11 +172,11 @@ S<span class="token punctuation">.</span>Coins<span class="token punctuation">.<
 <pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Coins <span class="token operator">=</span> S<span class="token punctuation">.</span>Coins<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">local</span> Stats <span class="token operator">=</span> S<span class="token punctuation">.</span>Stats<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Snapshot"><code style="text-decoration:none">Snapshot</code><a href="#Snapshot" class="hash-link" aria-label="Direct link to Snapshot" title="Direct link to Snapshot" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Tables</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L256"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Snapshot</code><code>(</code><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Snapshot"><code style="text-decoration:none">Snapshot</code><a href="#Snapshot" class="hash-link" aria-label="Direct link to Snapshot" title="Direct link to Snapshot" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Tables</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L261"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Snapshot</code><code>(</code><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>A copy of the value.</p>
 </span></span></div><div>
 <p>Returns a deep copy of this node that you can keep or change without touching the real data.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Set"><code style="text-decoration:none">Set</code><a href="#Set" class="hash-link" aria-label="Direct link to Set" title="Direct link to Set" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L278"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Set</code><code>(</code><div class="inset_uKQm"><div><code>Value<!-- -->: </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Set"><code style="text-decoration:none">Set</code><a href="#Set" class="hash-link" aria-label="Direct link to Set" title="Direct link to Set" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L283"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Set</code><code>(</code><div class="inset_uKQm"><div><code>Value<!-- -->: </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>The new value.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>The new value.</p>
@@ -182,7 +185,7 @@ S<span class="token punctuation">.</span>Coins<span class="token punctuation">.<
 <p>Setting the root expects a table.</p>
 <pre class="language-lua"><code class="language-lua">S<span class="token punctuation">.</span>Coins<span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Update"><code style="text-decoration:none">Update</code><a href="#Update" class="hash-link" aria-label="Direct link to Update" title="Direct link to Update" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L311"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Update</code><code>(</code><div class="inset_uKQm"><div><code>Updater<!-- -->: </code><code class="purple_ieR2">(</code><code>Current<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Update"><code style="text-decoration:none">Update</code><a href="#Update" class="hash-link" aria-label="Direct link to Update" title="Direct link to Update" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L316"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Update</code><code>(</code><div class="inset_uKQm"><div><code>Updater<!-- -->: </code><code class="purple_ieR2">(</code><code>Current<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>Receives the current value and returns the new one.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
 <p>The new value.</p>
@@ -192,7 +195,7 @@ S<span class="token punctuation">.</span>Coins<span class="token punctuation">.<
 	<span class="token keyword">return</span> Coins <span class="token operator">+</span> <span class="token number">10</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Mutate"><code style="text-decoration:none">Mutate</code><a href="#Mutate" class="hash-link" aria-label="Direct link to Mutate" title="Direct link to Mutate" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Tables</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L330"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Mutate</code><code>(</code><div class="inset_uKQm"><div><code>Mutator<!-- -->: </code><code class="purple_ieR2">(</code><code>Target<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Mutate"><code style="text-decoration:none">Mutate</code><a href="#Mutate" class="hash-link" aria-label="Direct link to Mutate" title="Direct link to Mutate" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Tables</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L335"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Mutate</code><code>(</code><div class="inset_uKQm"><div><code>Mutator<!-- -->: </code><code class="purple_ieR2">(</code><code>Target<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
 <p>Receives the table to change in place.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Changes several fields of a table at once. Strata works out what changed and replicates only that. Throws on the client.</p>
@@ -201,7 +204,7 @@ S<span class="token punctuation">.</span>Coins<span class="token punctuation">.<
 	Stats<span class="token punctuation">.</span>Xp <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Observe"><code style="text-decoration:none">Observe</code><a href="#Observe" class="hash-link" aria-label="Direct link to Observe" title="Direct link to Observe" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L357"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Observe</code><code>(</code><div class="inset_uKQm"><div><code>Listener<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>Value<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>Old<!-- -->: </code><code class="blue_P4bS">T?</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Observe"><code style="text-decoration:none">Observe</code><a href="#Observe" class="hash-link" aria-label="Direct link to Observe" title="Direct link to Observe" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L362"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Observe</code><code>(</code><div class="inset_uKQm"><div><code>Listener<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>Value<!-- -->: </code><code class="blue_P4bS">T</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>Old<!-- -->: </code><code class="blue_P4bS">T?</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
 <p>Called with the new value and the old one.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#Connection">Connection</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Call <code>Disconnect</code> on it to stop listening.</p>
@@ -215,81 +218,112 @@ S<span class="token punctuation">.</span>Coins<span class="token punctuation">.<
 
 Connection<span class="token punctuation">.</span><span class="token function">Disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Has"><code style="text-decoration:none">Has</code><a href="#Has" class="hash-link" aria-label="Direct link to Has" title="Direct link to Has" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L388"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Has</code><code>(</code><div class="inset_uKQm"><div><code>Key<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Has"><code style="text-decoration:none">Has</code><a href="#Has" class="hash-link" aria-label="Direct link to Has" title="Direct link to Has" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L393"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Has</code><code>(</code><div class="inset_uKQm"><div><code>Key<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The key to look for.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>Returns whether a key exists in this map or array.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Keys"><code style="text-decoration:none">Keys</code><a href="#Keys" class="hash-link" aria-label="Direct link to Keys" title="Direct link to Keys" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L401"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Keys</code><code>(</code><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Keys"><code style="text-decoration:none">Keys</code><a href="#Keys" class="hash-link" aria-label="Direct link to Keys" title="Direct link to Keys" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L406"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Keys</code><code>(</code><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
 <p>Returns every key in this map or array.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Values"><code style="text-decoration:none">Values</code><a href="#Values" class="hash-link" aria-label="Direct link to Values" title="Direct link to Values" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L420"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Values</code><code>(</code><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Values"><code style="text-decoration:none">Values</code><a href="#Values" class="hash-link" aria-label="Direct link to Values" title="Direct link to Values" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L425"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Values</code><code>(</code><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
 <p>Returns every value in this map or array.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Size"><code style="text-decoration:none">Size</code><a href="#Size" class="hash-link" aria-label="Direct link to Size" title="Direct link to Size" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L439"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Size</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Size"><code style="text-decoration:none">Size</code><a href="#Size" class="hash-link" aria-label="Direct link to Size" title="Direct link to Size" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L444"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Size</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
 <p>Returns how many entries this map or array has.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Clear"><code style="text-decoration:none">Clear</code><a href="#Clear" class="hash-link" aria-label="Direct link to Clear" title="Direct link to Clear" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L457"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Clear</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Clear"><code style="text-decoration:none">Clear</code><a href="#Clear" class="hash-link" aria-label="Direct link to Clear" title="Direct link to Clear" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L462"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Clear</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Removes every entry from this map or array. Throws on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Insert"><code style="text-decoration:none">Insert</code><a href="#Insert" class="hash-link" aria-label="Direct link to Insert" title="Direct link to Insert" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L474"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Insert</code><code>(</code><div class="inset_uKQm"><div><code>Key<!-- -->: </code><code class="blue_P4bS">any</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Insert"><code style="text-decoration:none">Insert</code><a href="#Insert" class="hash-link" aria-label="Direct link to Insert" title="Direct link to Insert" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L479"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Insert</code><code>(</code><div class="inset_uKQm"><div><code>Key<!-- -->: </code><code class="blue_P4bS">any</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The key to set.</p>
 </span></span></div><div><code>Value<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The value to store.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Sets one key in this map. Throws on the client.</p>
+<p>Sets one key in this map. Throws on the client. Arrays use <a href="/Strata/api/State#InsertAt">State.InsertAt</a> and <a href="/Strata/api/State#AddNext">State.AddNext</a> instead.</p>
 <pre class="language-lua"><code class="language-lua">S<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span><span class="token string">"sword_001"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> Damage <span class="token operator">=</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Remove"><code style="text-decoration:none">Remove</code><a href="#Remove" class="hash-link" aria-label="Direct link to Remove" title="Direct link to Remove" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Maps and arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L488"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Remove</code><code>(</code><div class="inset_uKQm"><div><code>Key<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
-<p>The key to remove.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Remove"><code style="text-decoration:none">Remove</code><a href="#Remove" class="hash-link" aria-label="Direct link to Remove" title="Direct link to Remove" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Maps</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L510"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Remove</code><code>(</code><div class="inset_uKQm"><div><code>Key<!-- -->: </code><code class="blue_P4bS">string</code><code class="op_lSLc"> | </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+<p>The map key to remove (not a numeric array index).</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
-<p>The value that was removed.</p>
+<p>The value that was removed, or <code>nil</code> if the key was missing.</p>
 </span></span></div><div>
 <p>Removes one key from this map. Throws on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="AddNext"><code style="text-decoration:none">AddNext</code><a href="#AddNext" class="hash-link" aria-label="Direct link to AddNext" title="Direct link to AddNext" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L507"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">AddNext</code><code>(</code><div class="inset_uKQm"><div><code>Value<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+<p>
+  For <strong>arrays</strong>, pass a string key only if the array is being used as a map.
+  Numeric indices on array-like tables must use <a href="/Strata/api/State#RemoveAt">State.RemoveAt</a> or
+  <a href="/Strata/api/State#RemoveLast">State.RemoveLast</a> — removing by number would leave a gap in the sequence.
+</p>
+<pre class="language-lua"><code class="language-lua">S<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token string">"sword_001"</span><span class="token punctuation">)</span> <span class="token comment">-- map</span>
+S<span class="token punctuation">.</span>Inventory<span class="token punctuation">.</span><span class="token function">RemoveAt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">-- array</span>
+S<span class="token punctuation">.</span>Inventory<span class="token punctuation">.</span><span class="token function">RemoveLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- array</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="AddNext"><code style="text-decoration:none">AddNext</code><a href="#AddNext" class="hash-link" aria-label="Direct link to AddNext" title="Direct link to AddNext" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L535"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">AddNext</code><code>(</code><div class="inset_uKQm"><div><code>Value<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The value to add.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>The new length.</p>
 </span></span></div><div>
 <p>Adds a value to the end of this array. Throws on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="RemoveLast"><code style="text-decoration:none">RemoveLast</code><a href="#RemoveLast" class="hash-link" aria-label="Direct link to RemoveLast" title="Direct link to RemoveLast" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L523"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">RemoveLast</code><code>(</code><code>) → </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="RemoveLast"><code style="text-decoration:none">RemoveLast</code><a href="#RemoveLast" class="hash-link" aria-label="Direct link to RemoveLast" title="Direct link to RemoveLast" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L551"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">RemoveLast</code><code>(</code><code>) → </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The removed value, or <code>nil</code> if the array is empty.</p>
 </span></span></div><div>
 <p>Removes and returns the last value of this array. Throws on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="InsertAt"><code style="text-decoration:none">InsertAt</code><a href="#InsertAt" class="hash-link" aria-label="Direct link to InsertAt" title="Direct link to InsertAt" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L544"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">InsertAt</code><code>(</code><div class="inset_uKQm"><div><code>Index<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="InsertAt"><code style="text-decoration:none">InsertAt</code><a href="#InsertAt" class="hash-link" aria-label="Direct link to InsertAt" title="Direct link to InsertAt" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L572"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">InsertAt</code><code>(</code><div class="inset_uKQm"><div><code>Index<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The position to insert at.</p>
 </span></span></div><div><code>Value<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The value to insert.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Inserts a value into this array and shifts everything after it. Throws on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="RemoveAt"><code style="text-decoration:none">RemoveAt</code><a href="#RemoveAt" class="hash-link" aria-label="Direct link to RemoveAt" title="Direct link to RemoveAt" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L561"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">RemoveAt</code><code>(</code><div class="inset_uKQm"><div><code>Index<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="RemoveAt"><code style="text-decoration:none">RemoveAt</code><a href="#RemoveAt" class="hash-link" aria-label="Direct link to RemoveAt" title="Direct link to RemoveAt" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Arrays</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L589"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">RemoveAt</code><code>(</code><div class="inset_uKQm"><div><code>Index<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>The position to remove.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The removed value.</p>
 </span></span></div><div>
 <p>Removes the value at a position in this array. Throws on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="IsLoaded"><code style="text-decoration:none">IsLoaded</code><a href="#IsLoaded" class="hash-link" aria-label="Direct link to IsLoaded" title="Direct link to IsLoaded" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L583"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">IsLoaded</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="IsLoaded"><code style="text-decoration:none">IsLoaded</code><a href="#IsLoaded" class="hash-link" aria-label="Direct link to IsLoaded" title="Direct link to IsLoaded" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L611"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">IsLoaded</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>Returns whether this session is still active.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Save"><code style="text-decoration:none">Save</code><a href="#Save" class="hash-link" aria-label="Direct link to Save" title="Direct link to Save" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L594"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Save</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Save"><code style="text-decoration:none">Save</code><a href="#Save" class="hash-link" aria-label="Direct link to Save" title="Direct link to Save" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L622"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Save</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Saves the session now instead of waiting for the next save. Does nothing on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="End"><code style="text-decoration:none">End</code><a href="#End" class="hash-link" aria-label="Direct link to End" title="Direct link to End" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L607"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">End</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="End"><code style="text-decoration:none">End</code><a href="#End" class="hash-link" aria-label="Direct link to End" title="Direct link to End" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L635"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">End</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Ends the session. The player is kicked if <code>KickOnSessionEnd</code> is on. Does nothing on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Replicate"><code style="text-decoration:none">Replicate</code><a href="#Replicate" class="hash-link" aria-label="Direct link to Replicate" title="Direct link to Replicate" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L621"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Replicate</code><code>(</code><div class="inset_uKQm"><div><code>Target<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Player" target="_blank" rel="noopener noreferrer">Player?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Replicate"><code style="text-decoration:none">Replicate</code><a href="#Replicate" class="hash-link" aria-label="Direct link to Replicate" title="Direct link to Replicate" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L649"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">Replicate</code><code>(</code><div class="inset_uKQm"><div><code>Target<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Player" target="_blank" rel="noopener noreferrer">Player?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Who to send to. Defaults to the session owner.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Sends a full snapshot to the client now. Does nothing on the client.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="GetSessionInfo"><code style="text-decoration:none">GetSessionInfo</code><a href="#GetSessionInfo" class="hash-link" aria-label="Direct link to GetSessionInfo" title="Direct link to GetSessionInfo" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L640"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">GetSessionInfo</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#SessionInfo">SessionInfo?</a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="GetSessionInfo"><code style="text-decoration:none">GetSessionInfo</code><a href="#GetSessionInfo" class="hash-link" aria-label="Direct link to GetSessionInfo" title="Direct link to GetSessionInfo" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L668"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">GetSessionInfo</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Strata/api/Strata#SessionInfo">SessionInfo?</a></code><span class="inlineDescription_G7Er">-- <span>
 <p><code>nil</code> if the session is not active.</p>
 </span></span></div><div>
 <p>Returns details about this session.</p>
 <pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Info <span class="token operator">=</span> S<span class="token punctuation">.</span><span class="token function">GetSessionInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token function">print</span><span class="token punctuation">(</span>Info<span class="token punctuation">.</span>UserId<span class="token punctuation">,</span> Info<span class="token punctuation">.</span>LoadedAt<span class="token punctuation">,</span> Info<span class="token punctuation">.</span>LastSaveAt<span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="GetMeta"><code style="text-decoration:none">GetMeta</code><a href="#GetMeta" class="hash-link" aria-label="Direct link to GetMeta" title="Direct link to GetMeta" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L656"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">GetMeta</code><code>(</code><div class="inset_uKQm"><div><code>MetaKey<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="GetMeta"><code style="text-decoration:none">GetMeta</code><a href="#GetMeta" class="hash-link" aria-label="Direct link to GetMeta" title="Direct link to GetMeta" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L684"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">GetMeta</code><code>(</code><div class="inset_uKQm"><div><code>MetaKey<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
 <p>The key to read. Omit it to get a copy of all metadata.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">any</code></div><div>
 <p>Reads from the metadata stored beside your data. Metadata is saved with the profile but is not part of your template.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SetMeta"><code style="text-decoration:none">SetMeta</code><a href="#SetMeta" class="hash-link" aria-label="Direct link to SetMeta" title="Direct link to SetMeta" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L672"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">SetMeta</code><code>(</code><div class="inset_uKQm"><div><code>MetaKey<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SetMeta"><code style="text-decoration:none">SetMeta</code><a href="#SetMeta" class="hash-link" aria-label="Direct link to SetMeta" title="Direct link to SetMeta" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L700"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">SetMeta</code><code>(</code><div class="inset_uKQm"><div><code>MetaKey<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The key to write.</p>
 </span></span></div><div><code>Value<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
 <p>The value to store. Must be JSON-compatible.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Writes to the metadata stored beside your data.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="GetPath"><code style="text-decoration:none">GetPath</code><a href="#GetPath" class="hash-link" aria-label="Direct link to GetPath" title="Direct link to GetPath" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff5252;color:#ff5252">Debug</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L722"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">GetPath</code><code>(</code><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>A shallow copy of the path array. Empty at the root.</p>
+</span></span></div><div>
+<p>Returns the path segments from the vault root to this node.</p>
+<p>Useful when writing generic helpers or logging which field changed.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>S<span class="token punctuation">.</span>Stats<span class="token punctuation">.</span>Level<span class="token punctuation">.</span><span class="token function">GetPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">-- "Stats.Level"</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="GetKey"><code style="text-decoration:none">GetKey</code><a href="#GetKey" class="hash-link" aria-label="Direct link to GetKey" title="Direct link to GetKey" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Root only</span><span class="docTag__6UZ" style="border-color:#ff5252;color:#ff5252">Debug</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L736"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">GetKey</code><code>(</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p>
+  Returns the session key this node belongs to (e.g. <code>"Player_123"</code> or an
+  incognito key when that mode is on).
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="DebugDump"><code style="text-decoration:none">DebugDump</code><a href="#DebugDump" class="hash-link" aria-label="Direct link to DebugDump" title="Direct link to DebugDump" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff5252;color:#ff5252">Debug</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/soggybird0/Strata/blob/master/src/State.luau#L754"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>State<!-- -->.</code><code class="green_DgR4">DebugDump</code><code>(</code><div class="inset_uKQm"><div><code>Label<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Optional prefix for the printed line.</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>
+  Pretty-prints this node's current value (or the whole vault at the root)
+  to the output. Intended for Studio debugging.
+</p>
+<pre class="language-lua"><code class="language-lua">S<span class="token punctuation">.</span><span class="token function">DebugDump</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- whole vault</span>
+S<span class="token punctuation">.</span>Stats<span class="token punctuation">.</span><span class="token function">DebugDump</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- just Stats</span>
+</code></pre>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
         {
@@ -304,7 +338,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 240,
+                &quot;line&quot;: 245,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -323,7 +357,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Tables&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 256,
+                &quot;line&quot;: 261,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -345,7 +379,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 278,
+                &quot;line&quot;: 283,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -367,7 +401,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 311,
+                &quot;line&quot;: 316,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -387,7 +421,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Tables&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 330,
+                &quot;line&quot;: 335,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -409,7 +443,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 357,
+                &quot;line&quot;: 362,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -434,7 +468,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Maps and arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 388,
+                &quot;line&quot;: 393,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -453,7 +487,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Maps and arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 401,
+                &quot;line&quot;: 406,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -472,7 +506,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Maps and arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 420,
+                &quot;line&quot;: 425,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -491,7 +525,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Maps and arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 439,
+                &quot;line&quot;: 444,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -505,13 +539,13 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Maps and arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 457,
+                &quot;line&quot;: 462,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
         {
             &quot;name&quot;: &quot;Insert&quot;,
-            &quot;desc&quot;: &quot;Sets one key in this map. Throws on the client.\n\n```lua\nS.Items.Insert(\&quot;sword_001\&quot;, { Damage = 12 })\n```&quot;,
+            &quot;desc&quot;: &quot;Sets one key in this map. Throws on the client. Arrays use [State.InsertAt] and [State.AddNext] instead.\n\n```lua\nS.Items.Insert(\&quot;sword_001\&quot;, { Damage = 12 })\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;Key&quot;,
@@ -530,32 +564,32 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Maps and arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 474,
+                &quot;line&quot;: 479,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
         {
             &quot;name&quot;: &quot;Remove&quot;,
-            &quot;desc&quot;: &quot;Removes one key from this map. Throws on the client.&quot;,
+            &quot;desc&quot;: &quot;Removes one key from this map. Throws on the client.\n\nFor **arrays**, pass a string key only if the array is being used as a map.\nNumeric indices on array-like tables must use [State.RemoveAt] or\n[State.RemoveLast] — removing by number would leave a gap in the sequence.\n\n```lua\nS.Items.Remove(\&quot;sword_001\&quot;) -- map\nS.Inventory.RemoveAt(2) -- array\nS.Inventory.RemoveLast() -- array\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;Key&quot;,
-                    &quot;desc&quot;: &quot;The key to remove.&quot;,
-                    &quot;lua_type&quot;: &quot;any&quot;
+                    &quot;desc&quot;: &quot;The map key to remove (not a numeric array index).&quot;,
+                    &quot;lua_type&quot;: &quot;string | any&quot;
                 }
             ],
             &quot;returns&quot;: [
                 {
-                    &quot;desc&quot;: &quot;The value that was removed.&quot;,
+                    &quot;desc&quot;: &quot;The value that was removed, or `nil` if the key was missing.&quot;,
                     &quot;lua_type&quot;: &quot;any&quot;
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;tags&quot;: [
-                &quot;Maps and arrays&quot;
+                &quot;Maps&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 488,
+                &quot;line&quot;: 510,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -580,7 +614,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 507,
+                &quot;line&quot;: 535,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -599,7 +633,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 523,
+                &quot;line&quot;: 551,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -624,7 +658,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 544,
+                &quot;line&quot;: 572,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -649,7 +683,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Arrays&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 561,
+                &quot;line&quot;: 589,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -668,7 +702,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 583,
+                &quot;line&quot;: 611,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -682,7 +716,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 594,
+                &quot;line&quot;: 622,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -696,7 +730,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 607,
+                &quot;line&quot;: 635,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -716,7 +750,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 621,
+                &quot;line&quot;: 649,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -735,7 +769,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 640,
+                &quot;line&quot;: 668,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -760,7 +794,7 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 656,
+                &quot;line&quot;: 684,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         },
@@ -785,7 +819,66 @@ Connection<span class="token punctuation">.</span><span class="token function">D
                 &quot;Root only&quot;
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 672,
+                &quot;line&quot;: 700,
+                &quot;path&quot;: &quot;src/State.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GetPath&quot;,
+            &quot;desc&quot;: &quot;Returns the path segments from the vault root to this node.\n\nUseful when writing generic helpers or logging which field changed.\n\n```lua\nprint(table.concat(S.Stats.Level.GetPath(), \&quot;.\&quot;)) -- \&quot;Stats.Level\&quot;\n```&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A shallow copy of the path array. Empty at the root.&quot;,
+                    &quot;lua_type&quot;: &quot;{ any }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Debug&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 722,
+                &quot;path&quot;: &quot;src/State.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GetKey&quot;,
+            &quot;desc&quot;: &quot;Returns the session key this node belongs to (e.g. `\&quot;Player_123\&quot;` or an\nincognito key when that mode is on).&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Root only&quot;,
+                &quot;Debug&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 736,
+                &quot;path&quot;: &quot;src/State.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;DebugDump&quot;,
+            &quot;desc&quot;: &quot;Pretty-prints this node&#x27;s current value (or the whole vault at the root)\nto the output. Intended for Studio debugging.\n\n```lua\nS.DebugDump() -- whole vault\nS.Stats.DebugDump() -- just Stats\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;Label&quot;,
+                    &quot;desc&quot;: &quot;Optional prefix for the printed line.&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Debug&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 754,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         }
@@ -796,18 +889,18 @@ Connection<span class="token punctuation">.</span><span class="token function">D
             &quot;desc&quot;: &quot;A signal that fires when this node&#x27;s value changes. Unlike [State.Observe]\nit does not fire for the current value on connect.\n\nIt&#x27;s a real object, so it uses method syntax.\n\n```lua\nlocal Connection = S.Coins.Changed:Connect(function(New, Old)\n\tprint(New, \&quot;was\&quot;, Old)\nend)\n\nS.Coins.Changed:Once(function(New) end)\nlocal New, Old = S.Coins.Changed:Wait()\n```&quot;,
             &quot;lua_type&quot;: &quot;Signal&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 188,
+                &quot;line&quot;: 191,
                 &quot;path&quot;: &quot;src/State.luau&quot;
             }
         }
     ],
     &quot;types&quot;: [],
     &quot;name&quot;: &quot;State&quot;,
-    &quot;desc&quot;: &quot;A typed node for one path in a player&#x27;s data. Every field in your template\nis a node, and every node has the same few methods. Everything is **dot\nsyntax**: nodes hand out pre-bound functions, so `S.Coins.Get()` works with\nno `self`. The one exception is a node&#x27;s `Changed` signal, which is a real\nobject: `S.Coins.Changed:Connect(fn)`.\n\n```lua\nlocal Data = require(game.ReplicatedStorage.Data).Server\n\nlocal S = Data:LoadVault(Player)\nif S then\n\tS.Coins.Update(function(Coins)\n\t\treturn Coins + 50\n\tend)\n\tS.Inventory.AddNext(\&quot;Sword\&quot;)\n\n\t-- Fires once with the current value, then on every change\n\tS.Coins.Observe(function(Coins, Old)\n\t\tprint(\&quot;Coins:\&quot;, Coins, \&quot;was\&quot;, Old)\n\tend)\n\n\t-- Only on changes\n\tlocal Connection = S.Coins.Changed:Connect(function(New, Old)\n\t\tprint(New, \&quot;was\&quot;, Old)\n\tend)\n\tConnection.Disconnect()\nend\n```\n\n**All nodes:** `Get`, `Set`, `Update`, `Observe`, `Changed`\n**Tables:** `Mutate`, `Snapshot`\n**Maps and arrays:** `Has`, `Keys`, `Values`, `Size`, `Clear`, `Insert`, `Remove`\n**Arrays:** `AddNext`, `RemoveLast`, `InsertAt`, `RemoveAt`\n**Root only:** `IsLoaded`, `Save`, `End`, `Replicate`, `GetSessionInfo`, `GetMeta`, `SetMeta`\n\nWrite methods throw on the client. Change data on the server and let\nreplication do the rest.\n\n:::danger Type solver required\nAutocomplete needs the new Luau type solver. Runtime works without it.\n:::&quot;,
+    &quot;desc&quot;: &quot;A typed node for one path in a player&#x27;s data. Every field in your template\nis a node, and every node has the same few methods. Everything is **dot\nsyntax**: nodes hand out pre-bound functions, so `S.Coins.Get()` works with\nno `self`. The one exception is a node&#x27;s `Changed` signal, which is a real\nobject: `S.Coins.Changed:Connect(fn)`.\n\n```lua\nlocal Data = require(game.ReplicatedStorage.Data).Server\n\nlocal S = Data:LoadVault(Player)\nif S then\n\tS.Coins.Update(function(Coins)\n\t\treturn Coins + 50\n\tend)\n\tS.Inventory.AddNext(\&quot;Sword\&quot;)\n\n\t-- Fires once with the current value, then on every change\n\tS.Coins.Observe(function(Coins, Old)\n\t\tprint(\&quot;Coins:\&quot;, Coins, \&quot;was\&quot;, Old)\n\tend)\n\n\t-- Only on changes\n\tlocal Connection = S.Coins.Changed:Connect(function(New, Old)\n\t\tprint(New, \&quot;was\&quot;, Old)\n\tend)\n\tConnection.Disconnect()\nend\n```\n\n**All nodes:** `Get`, `Set`, `Update`, `Observe`, `Changed`\n**Tables:** `Mutate`, `Snapshot`\n**Maps and arrays:** `Has`, `Keys`, `Values`, `Size`, `Clear`\n**Maps:** `Insert`, `Remove`\n**Arrays:** `AddNext`, `RemoveLast`, `InsertAt`, `RemoveAt`\n**Root only:** `IsLoaded`, `Save`, `End`, `Replicate`, `GetSessionInfo`, `GetMeta`, `SetMeta`\n\nWrite methods throw on the client. Change data on the server and let\nreplication do the rest.\n\n:::danger Type solver required\nAutocomplete needs the new Luau type solver. Runtime works without it.\n:::&quot;,
     &quot;source&quot;: {
-        &quot;line&quot;: 49,
+        &quot;line&quot;: 50,
         &quot;path&quot;: &quot;src/State.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Changed" class="table-of-contents__link toc-highlight">Changed</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#AddNext" class="table-of-contents__link toc-highlight">.AddNext</a></li><li><a href="#Clear" class="table-of-contents__link toc-highlight">.Clear</a></li><li><a href="#End" class="table-of-contents__link toc-highlight">.End</a></li><li><a href="#Get" class="table-of-contents__link toc-highlight">.Get</a></li><li><a href="#GetMeta" class="table-of-contents__link toc-highlight">.GetMeta</a></li><li><a href="#GetSessionInfo" class="table-of-contents__link toc-highlight">.GetSessionInfo</a></li><li><a href="#Has" class="table-of-contents__link toc-highlight">.Has</a></li><li><a href="#Insert" class="table-of-contents__link toc-highlight">.Insert</a></li><li><a href="#InsertAt" class="table-of-contents__link toc-highlight">.InsertAt</a></li><li><a href="#IsLoaded" class="table-of-contents__link toc-highlight">.IsLoaded</a></li><li><a href="#Keys" class="table-of-contents__link toc-highlight">.Keys</a></li><li><a href="#Mutate" class="table-of-contents__link toc-highlight">.Mutate</a></li><li><a href="#Observe" class="table-of-contents__link toc-highlight">.Observe</a></li><li><a href="#Remove" class="table-of-contents__link toc-highlight">.Remove</a></li><li><a href="#RemoveAt" class="table-of-contents__link toc-highlight">.RemoveAt</a></li><li><a href="#RemoveLast" class="table-of-contents__link toc-highlight">.RemoveLast</a></li><li><a href="#Replicate" class="table-of-contents__link toc-highlight">.Replicate</a></li><li><a href="#Save" class="table-of-contents__link toc-highlight">.Save</a></li><li><a href="#Set" class="table-of-contents__link toc-highlight">.Set</a></li><li><a href="#SetMeta" class="table-of-contents__link toc-highlight">.SetMeta</a></li><li><a href="#Size" class="table-of-contents__link toc-highlight">.Size</a></li><li><a href="#Snapshot" class="table-of-contents__link toc-highlight">.Snapshot</a></li><li><a href="#Update" class="table-of-contents__link toc-highlight">.Update</a></li><li><a href="#Values" class="table-of-contents__link toc-highlight">.Values</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 soggybird0. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Changed" class="table-of-contents__link toc-highlight">Changed</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#AddNext" class="table-of-contents__link toc-highlight">.AddNext</a></li><li><a href="#Clear" class="table-of-contents__link toc-highlight">.Clear</a></li><li><a href="#DebugDump" class="table-of-contents__link toc-highlight">.DebugDump</a></li><li><a href="#End" class="table-of-contents__link toc-highlight">.End</a></li><li><a href="#Get" class="table-of-contents__link toc-highlight">.Get</a></li><li><a href="#GetKey" class="table-of-contents__link toc-highlight">.GetKey</a></li><li><a href="#GetMeta" class="table-of-contents__link toc-highlight">.GetMeta</a></li><li><a href="#GetPath" class="table-of-contents__link toc-highlight">.GetPath</a></li><li><a href="#GetSessionInfo" class="table-of-contents__link toc-highlight">.GetSessionInfo</a></li><li><a href="#Has" class="table-of-contents__link toc-highlight">.Has</a></li><li><a href="#Insert" class="table-of-contents__link toc-highlight">.Insert</a></li><li><a href="#InsertAt" class="table-of-contents__link toc-highlight">.InsertAt</a></li><li><a href="#IsLoaded" class="table-of-contents__link toc-highlight">.IsLoaded</a></li><li><a href="#Keys" class="table-of-contents__link toc-highlight">.Keys</a></li><li><a href="#Mutate" class="table-of-contents__link toc-highlight">.Mutate</a></li><li><a href="#Observe" class="table-of-contents__link toc-highlight">.Observe</a></li><li><a href="#Remove" class="table-of-contents__link toc-highlight">.Remove</a></li><li><a href="#RemoveAt" class="table-of-contents__link toc-highlight">.RemoveAt</a></li><li><a href="#RemoveLast" class="table-of-contents__link toc-highlight">.RemoveLast</a></li><li><a href="#Replicate" class="table-of-contents__link toc-highlight">.Replicate</a></li><li><a href="#Save" class="table-of-contents__link toc-highlight">.Save</a></li><li><a href="#Set" class="table-of-contents__link toc-highlight">.Set</a></li><li><a href="#SetMeta" class="table-of-contents__link toc-highlight">.SetMeta</a></li><li><a href="#Size" class="table-of-contents__link toc-highlight">.Size</a></li><li><a href="#Snapshot" class="table-of-contents__link toc-highlight">.Snapshot</a></li><li><a href="#Update" class="table-of-contents__link toc-highlight">.Update</a></li><li><a href="#Values" class="table-of-contents__link toc-highlight">.Values</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 soggybird0. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
